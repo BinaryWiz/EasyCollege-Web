@@ -11,88 +11,61 @@
 </head>
 <body>
 
-<nav class="green darken-2">
-    <div class="nav-wrapper">
-        <div class="container"> 
-            <a href="#" class="brand-logo center">Easy College</a>
-            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-            </ul>
-        </div>
-        
-    </div>
-</nav>
-
-
-<ul id="slide-out" class="sidenav sidenav-fixed">
-    <li>
-        <div class="user-view">
-            <div class="background green darken-3" >
-                
+    <nav class="green darken-2">
+        <div class="nav-wrapper">
+            <div class="container"> 
+                <a href="#" class="brand-logo center">Easy College</a>
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                </ul>
             </div>
-            <a href="#user"><img class="circle" src="{{ url_for('static', filename='images/instagram_profile_image.png') }}"></a>
-            <a href="#name"><span class="white-text name">Jason Acheampong</span></a>
-            <a href="#email"><span class="white-text email">jason.timelessapps@gmail.com</span></a>
+            
         </div>
-    </li>
+    </nav>
 
-    <li><a href="#!"><i class="material-icons">cloud</i>Save Colleges to Cloud</a></li>
-    <li><a href="https://www.niche.com/" target="_blank">Check out Niche</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Timeless Apps</a></li>
-    <li><a class="waves-effect" href="http://www.timeless-apps.com/" target="_blank">Timeless Apps Website</a></li>
-</ul>
 
-<div>
-    <div id="cards-area" class="row">
-        <div class="col s12 m3">
-            <div class="card green darken-3">
-                <div class="card-content white-text">
-                    <div id="grade-title">
-                        <div class="grade teal accent-4">
-                            <span>A+</span>
-                        </div>
+    <ul id="slide-out" class="sidenav sidenav-fixed">
+        <li>
+            <div class="user-view">
+                <div class="background green darken-3" >
+                    
+                </div>
+                <a href="#user"><img class="circle" src="{{ url_for('static', filename='images/instagram_profile_image.png') }}"></a>
+                <a href="#name"><span class="white-text name">Jason Acheampong</span></a>
+                <a href="#email"><span class="white-text email">jason.timelessapps@gmail.com</span></a>
+            </div>
+        </li>
 
-                        <span class="card-title" style="display: inline-block;">
-                            Stanford University 
-                        </span>
+        <li><a href="#!"><i class="material-icons">cloud</i>Save Colleges to Cloud</a></li>
+        <li><a href="https://www.niche.com/" target="_blank">Check out Niche</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Timeless Apps</a></li>
+        <li><a class="waves-effect" href="http://www.timeless-apps.com/" target="_blank">Timeless Apps Website</a></li>
+    </ul>
+
+    <div>
+        <div id="cards-area" class="row">
+            
+        </div>
+
+        <a href="#add-college" class="btn-floating btn-large waves-effect waves-light teal accent-4 modal-trigger" id="fab"><i class="material-icons">add</i></a>
+
+        <div id="add-college" class="modal modal-fixed-footer">
+            <div class="modal-content">
+                <h4>Find a College</h4>
+                <form>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">search</i>
+                        <input type="text" id="search-college" class="input">
+                        <label for="search-college">Search a College...</label>
                     </div>
-
-                    <ul class="list-info">
-                        <li>SAT Range: 1400-1590</li>
-                        <li>ACT Range: 32-35</li>
-                        <li>Acceptance Rate: 7%</li>
-                        <li>Location: Stanford, CA</li>
-                        <li>Net Price: $17, 732</li>
-                    </ul>
-                </div>
-
-                <div class="card-action">
-                    <a class="white-text" href="#">Learn More</a>
-                </div>
-
+                </form>
             </div>
-        </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Exit</a>
+                <a href="javascript:;" onclick="search_college()" class="modal-close waves-effect waves-green btn-flat">Search</a>
+            </div>
     </div>
-
-    <a href="#add-college" class="btn-floating btn-large waves-effect waves-light teal accent-4 modal-trigger" id="fab"><i class="material-icons">add</i></a>
-
-    <div id="add-college" class="modal modal-fixed-footer">
-        <div class="modal-content">
-            <h4>Find a College</h4>
-            <form>
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">search</i>
-                    <input type="text" id="search-college" class="input">
-                    <label for="search-college">Search a College...</label>
-                </div>
-            </form>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Exit</a>
-            <a href="javascript:;" onclick="search_college()" class="modal-close waves-effect waves-green btn-flat">Search</a>
-        </div>
-        </div>
     </div>
 
     <div class="spinner-container z-depth-1">
@@ -116,6 +89,7 @@
 
 
     <div id="college-options-container" class="modal">
+        <h2>Colleges</h2>
         <div id="college-options" class="collection">
 
         </div>
