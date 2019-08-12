@@ -1,7 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    M.Sidenav.init(elems, {});
+    var sidenav = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(sidenav, {});
+    
     var collapsibleElem = document.querySelector('.collapsible');
     var collapsibleInstance = M.Collapsible.init(collapsibleElem, {});
 
+    var modal = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(modal, {});
 });
+
+
+function search_college() {
+    console.log("Got to search")
+}

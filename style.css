@@ -21,7 +21,7 @@
     width: 45px;
     height: 45px;
     margin-right: 10px;
-    font-size: 20px
+    font-size: 20px;
 }
 
 .list-info {
@@ -32,6 +32,13 @@
     position: absolute;
     top: 90vh;
     left: 90vw;
+}
+
+#add-college {
+    min-width: 400px;
+    min-height: 250px;
+    width: 400px;
+    height: 250px
 }
 
 @media only screen and (max-width: 992px) {
