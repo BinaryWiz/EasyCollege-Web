@@ -7,6 +7,33 @@
     margin-left: 300px;
 }
 
+#grade-title {
+    display: flex;
+    align-items: center;
+}
+
+.grade {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+    font-size: 20px
+}
+
+.list-info {
+    font-size: 1vw;
+}
+
+#fab {
+    position: absolute;
+    top: 90vh;
+    left: 90vw;
+}
+
 @media only screen and (max-width: 992px) {
     #cards-area {
         margin-left: 0px;
