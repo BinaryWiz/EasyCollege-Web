@@ -11,5 +11,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function search_college() {
-    console.log("Got to search")
+    let college = document.getElementById("search-college").value;
 }
