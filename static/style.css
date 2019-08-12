@@ -41,8 +41,10 @@
     height: 250px
 }
 
+#college-options {
+}
+
 .spinner-container {
-    display: flex;
     display: none;
     position: absolute;
     top: 50%;
