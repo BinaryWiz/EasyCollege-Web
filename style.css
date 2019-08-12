@@ -2,3 +2,13 @@
     height: 50px;
     width: auto;
 }
+
+#cards-area {
+    margin-left: 300px;
+}
+
+@media only screen and (max-width: 992px) {
+    #cards-area {
+        margin-left: 0px;
+    }
+}
