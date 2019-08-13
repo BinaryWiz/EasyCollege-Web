@@ -7,7 +7,7 @@ html, body {
     width: auto;
 }
 
-#college-card {
+.college-card {
     z-index: 999;
 }
 
@@ -32,6 +32,10 @@ html, body {
     min-height: 45px;
     margin-right: 10px;
     font-size: 24px;
+}
+
+.delete-button:hover {
+    cursor: pointer;
 }
 
 .list-info {

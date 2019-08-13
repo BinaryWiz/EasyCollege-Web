@@ -98,7 +98,7 @@ function create_college_card(json_info) {
     formatted = formatted.replace(/ /g, "-");
 
     var card = `
-    <div id="college-card" class="col s12 m3">
+    <div id="`+ formatted +`" class="col s12 m3 college-card">
         <div class="card green darken-3">
             <div class="card-content white-text">
                 <div id="grade-title">
@@ -122,7 +122,7 @@ function create_college_card(json_info) {
 
             <div class="card-action">
                 <a class="white-text" target="_blank" href="https://www.niche.com/colleges/`+ formatted +`">Learn More</a>
-                <a class="btn right" style="width: fit-content; height: fit-content; background-color: transparent; box-shadow: none; margin-bottom: 10px;">
+                <a alt="Delete College" class="delete-button right" onclick=delete_card('`+ formatted +`') style="width: fit-content; height: fit-content; background-color: transparent; box-shadow: none; margin-bottom: 10px;">
                     <i class="material-icons white-text" style="font-size: 2rem">delete</i>
                 </a>
             </div>
@@ -132,4 +132,9 @@ function create_college_card(json_info) {
     `
 
     document.getElementById("cards-area").innerHTML += card;
+}
+
+function delete_card(card_id) {
+    localStorage.removeItem(card_id);
+    $("#" + card_id).remove();
 }
