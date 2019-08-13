@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var modal = document.querySelectorAll('.modal');
     var instances = M.Modal.init(modal, {});
 
-
 });
 
 
@@ -54,16 +53,30 @@ function search_college() {
 
 function get_college_data(college) {            
     $("#college-options-container").modal("close");
+
     document.getElementsByClassName("spinner-container")[0].style.display = "flex"
     var formatted = college.toLowerCase();
     formatted = formatted.replace(/ /g, "-");
+
     var request = new XMLHttpRequest();
+
+    $("#fab").addClass("disabled");
 
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(request.responseText);
+
+            if (localStorage.getItem('collegeList') == null) {
+                localStorage.setItem('collegeList', "" + response.message.Name + ", ")
+            } else {
+                var college_list = localStorage.getItem('collegeList');
+                localStorage.setItem('collegeList', college_list + response.message.Name + ", ");
+            }
+
+            localStorage.setItem(response.message.Name, request.responseText);
+
             var card = `
-            <div class="col s12 m3">
+            <div id="college-card" class="col s12 m3">
                 <div class="card green darken-3">
                     <div class="card-content white-text">
                         <div id="grade-title">
@@ -95,8 +108,10 @@ function get_college_data(college) {
 
             document.getElementById("cards-area").innerHTML += card;
             document.getElementsByClassName("spinner-container")[0].style.display = "none"
+            $("#fab").removeClass("disabled");
         }
     }
+
     request.open("GET", "https://1m468rdcpi.execute-api.us-east-1.amazonaws.com/prod/search?search=" + formatted, true);
     request.send();
 }
